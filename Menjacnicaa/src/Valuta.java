@@ -1,3 +1,4 @@
+import java.util.GregorianCalendar;
 
 public class Valuta {
 	String naziv, skraceniNaziv;
@@ -7,48 +8,56 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(!(naziv==null))
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(!(naziv==null))
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	public int getDan() {
 		return dan;
 	}
 	public void setDan(int dan) {
+		if(dan>0&&dan<=31)
 		this.dan = dan;
 	}
 	public int getMesec() {
 		return mesec;
 	}
 	public void setMesec(int mesec) {
+		if(mesec>0&&mesec<=12)
 		this.mesec = mesec;
 	}
 	public int getGodina() {
 		return godina;
 	}
 	public void setGodina(int godina) {
+		if(godina>=2000&&godina<=(new GregorianCalendar().get(GregorianCalendar.YEAR)))
 		this.godina = godina;
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs>0)
 		this.kupovniKurs = kupovniKurs;
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs>0)
 		this.srednjiKurs = srednjiKurs;
 	}
 	public double getProdajniKurs() {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs>0)
 		this.prodajniKurs = prodajniKurs;
 	}
 	@Override
