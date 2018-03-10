@@ -1,9 +1,11 @@
+package menjacnica;
 import java.util.GregorianCalendar;
 
 public class Valuta {
-	String naziv, skraceniNaziv;
-	int dan, mesec, godina;
-	double kupovniKurs, srednjiKurs, prodajniKurs;
+	private String naziv, skraceniNaziv;
+	private int dan, mesec, godina;
+	private double kupovniKurs, srednjiKurs, prodajniKurs;
+	
 	public String getNaziv() {
 		return naziv;
 	}
