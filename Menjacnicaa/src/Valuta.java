@@ -51,5 +51,42 @@ public class Valuta {
 	public void setProdajniKurs(double prodajniKurs) {
 		this.prodajniKurs = prodajniKurs;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + dan;
+		result = prime * result + godina;
+		result = prime * result + mesec;
+		result = prime * result + ((skraceniNaziv == null) ? 0 : skraceniNaziv.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Valuta other = (Valuta) obj;
+		if (dan != other.dan)
+			return false;
+		if (godina != other.godina)
+			return false;
+		if (mesec != other.mesec)
+			return false;
+		if (skraceniNaziv == null) {
+			if (other.skraceniNaziv != null)
+				return false;
+		} else if (!skraceniNaziv.equals(other.skraceniNaziv))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return naziv+" na dan "+dan+" "+mesec+" "+godina+" :"
+				+"kupovni:"+kupovniKurs+" srednji:"+srednjiKurs+" prodajni:"+prodajniKurs;
+	}
 	
 }
